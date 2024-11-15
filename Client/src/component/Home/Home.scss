@@ -1,0 +1,138 @@
+.admin-home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    margin-bottom: 100px;
+    h6 {
+      width: 100%;
+      font-size: 1.75em;
+      text-align: center;
+    }
+  }
+
+  .data-box {
+    flex-wrap: wrap;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+
+    .inner-circle {
+      justify-content: center;
+
+      h6 {
+        color: var(--green);
+        text-align: center;
+        font-size: 2.5em;
+      }
+      p {
+        margin-bottom: 50px;
+        text-align: center;
+        width: 80%;
+        margin: 0 auto;
+        font-size: 0.875em;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .container {
+    margin: 10px;
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: var(--green);
+    padding: 1rem;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .container::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    aspect-ratio: 1/1;
+    background-color: #cd0404;
+    border-radius: 100%;
+    padding: 1rem;
+    transform: translateY(10px);
+    z-index: -1;
+  }
+
+  // figure {
+  //     height: 80%;
+  // }
+
+  .inner-circle {
+    background-color: white;
+    width: 170px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    z-index: 2;
+    transform: translateY(5px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container::after {
+    content: "";
+
+    background-color: #d7d7d7;
+    width: 170px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    position: absolute;
+    transform: translateY(-5px);
+    z-index: 1;
+  }
+
+  @media only screen and (max-width: 1280px) {
+    font-size: 12px !important;
+  }
+  @media only screen and (max-width: 1024px) {
+    font-size: 10px !important;
+  }
+  @media only screen and (max-width: 1600px) {
+    font-size: 13px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .header {
+      position: relative;
+
+      h6 {
+        width: 80% !important;
+        margin: auto;
+      }
+    }
+
+    .data-box {
+      width: 100%;
+      justify-content: center;
+      .container {
+        width: 150px;
+
+        &::before {
+          width: 150px;
+        }
+
+        &::after {
+          width: 120px;
+        }
+
+        .inner-circle {
+          width: 120px;
+        }
+      }
+    }
+  }
+}
